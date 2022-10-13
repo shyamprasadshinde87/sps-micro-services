@@ -1,0 +1,30 @@
+package com.sp.Company.feignclient;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.sp.Company.companyModel.CompanyModel;
+
+@FeignClient(name = "employees", url = "http://localhost:8080")
+public interface CompanyClient {
+
+	@GetMapping(value = "/admin/employees")
+	public String getAllemployees();
+
+	@GetMapping(value = "/admin/employees/{id}")
+	public String getEmployeeById(@PathVariable(value = "id") Long EmpId);
+
+	@DeleteMapping("/admin/employees/{id}")
+	public String deleteEmployeeById(@PathVariable(value = "id") Long EmpId);
+
+	@PostMapping(value = "/admin/employees")
+	public CompanyModel createCompanyModel(@RequestBody CompanyModel companyModel);
+
+	@PutMapping("/admin/employees/{id}")
+	public CompanyModel updateCompanyModel(@PathVariable(value = "id") Long EmpId);
+}

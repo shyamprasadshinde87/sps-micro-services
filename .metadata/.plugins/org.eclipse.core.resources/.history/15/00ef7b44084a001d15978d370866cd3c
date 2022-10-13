@@ -1,0 +1,5 @@
+package com.sp.employee.employeeVo;
+
+public class EmployeeVo {
+
+}

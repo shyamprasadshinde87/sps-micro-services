@@ -1,0 +1,18 @@
+spring.application.name= company
+server.port= 8087
+#eureka.client.service-url.defaultZone= http://localhost:8761/eureka
+ 
+ logging.level.com.sp.employee=DEBUG
+com.sp.employee.Controller=DEBUG
+ logging.level.root=WARN
+ logging.file.name=C:/sp log/sp.log.txt
+ 
+spring.datasource.url=jdbc:postgresql://localhost:5432/employees
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+spring.jpa.show-sql=true
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+
+#Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto = update

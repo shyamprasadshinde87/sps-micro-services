@@ -1,0 +1,5 @@
+package com.sp.Company.feignclient;
+
+public interface CompanyClient {
+
+}
